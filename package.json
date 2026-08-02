@@ -1,0 +1,22 @@
+{
+  "name": "realtime-arena",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Realtime Arena - Color Clash. Real-time multiplayer color Stroop game built with Vite/React + Express/Socket.IO.",
+  "scripts": {
+    "install:client": "npm install --prefix client --no-audit --no-fund",
+    "install:server": "npm install --prefix server --no-audit --no-fund",
+    "install:all": "npm run install:server && npm run install:client",
+    "build": "npm run install:client && node client/node_modules/vite/bin/vite.js build",
+    "start": "node server/src/index.js",
+    "dev:server": "node server/src/index.js",
+    "dev:client": "node client/node_modules/vite/bin/vite.js",
+    "test": "node tools/smoke-test.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "socket.io-client": "^4.7.5"
+  }
+}
