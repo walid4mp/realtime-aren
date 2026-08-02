@@ -7,16 +7,13 @@
     "install:client": "npm install --prefix client --no-audit --no-fund",
     "install:server": "npm install --prefix server --no-audit --no-fund",
     "install:all": "npm run install:server && npm run install:client",
-    "build": "npm run install:client && node client/node_modules/vite/bin/vite.js build",
+    "build": "npm --prefix client run build",
     "start": "node server/src/index.js",
     "dev:server": "node server/src/index.js",
-    "dev:client": "node client/node_modules/vite/bin/vite.js",
+    "dev:client": "npm --prefix client run dev",
     "test": "node tools/smoke-test.js"
   },
   "engines": {
     "node": ">=18"
-  },
-  "dependencies": {
-    "socket.io-client": "^4.7.5"
   }
 }
